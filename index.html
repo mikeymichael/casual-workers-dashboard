@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casual Workers Pro System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">Casual Workers Management System</header>
+  <aside class="sidebar">
+    <ul>
+      <li onclick="showView('dashboard')">📊 Dashboard</li>
+      <li onclick="showView('workers')">👷 Workers</li>
+      <li onclick="showView('attendance')">📅 Attendance</li>
+    </ul>
+  </aside>
+  <main class="main-content">
+    <section id="dashboard" class="view active">
+      <h2>Dashboard Overview</h2>
+      <div class="cards">
+        <div class="card"><h3>Total Workers</h3><p id="totalWorkers">0</p></div>
+        <div class="card"><h3>Total Pay (KSH)</h3><p id="totalPay">0</p></div>
+        <div class="card"><h3>Average Daily Pay</h3><p id="avgPay">0</p></div>
+        <div class="card"><h3>Attendance Rate</h3><p id="attendanceRate">0%</p></div>
+      </div>
+    </section>
+
+    <section id="workers" class="view">
+      <h2>Manage Workers</h2>
+      <form id="workerForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="text" id="idNumber" placeholder="ID Number" required />
+        <input type="text" id="residence" placeholder="Residence" required />
+        <input type="text" id="sha" placeholder="SHA Account" required />
+        <button type="submit">Add Worker</button>
+      </form>
+      <table id="workerTable">
+        <thead><tr><th>Name</th><th>ID</th><th>Residence</th><th>SHA</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="attendance" class="view">
+      <h2>Daily Attendance</h2>
+      <input type="date" id="attendanceDate" />
+      <button onclick="markAttendance()">Mark Attendance</button>
+      <table id="attendanceTable">
+        <thead><tr><th>Name</th><th>Present</th><th>Daily Pay</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>Created and Developed by MMKibinge</footer>
+  <script src="script.js"></script>
+</body>
+</html>
