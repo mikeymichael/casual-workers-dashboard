@@ -1,0 +1,37 @@
+
+/* ... existing styles ... */
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.worker-name {
+  display: flex;
+  align-items: center;
+}
+
+/* Animate dots smoothly */
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.dot.present {
+  background: #3cb371;
+  border: 2px solid #2e8b57;
+  transform: scale(1.2);
+}
+
+.dot.absent {
+  background: #ccc;
+  border: 2px solid #aaa;
+  transform: scale(1);
+}
